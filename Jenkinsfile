@@ -19,12 +19,5 @@ pipeline {
                 }
             }
         }
-        // Add more stages as needed for your pipeline
-    }
-    post {
-        always {
-            // Clean up workspace
-            cleanWs()
-        }
     }
 }
