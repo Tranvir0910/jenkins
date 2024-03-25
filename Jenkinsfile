@@ -5,8 +5,10 @@ pipeline {
     }
     stages {
         stage('Build Maven') {
-            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-blog', url: 'https://github.com/Tranvir0910/jenkins.git']])
-            sh 'mvn clean install'
+            steps{
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-blog', url: 'https://github.com/Tranvir0910/jenkins.git']])
+                sh 'mvn clean install'
+            }
         }
         stage('Clone Repository') {
             steps {
