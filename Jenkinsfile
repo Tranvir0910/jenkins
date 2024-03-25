@@ -9,8 +9,17 @@ pipeline {
             }
         }
         // Add more stages as needed for your pipeline
+        stage('Build Stage') {
+            steps {
+                // Clone the repository from GitHub
+                withDockerRegistry(credentialsId: 'jenkins-blog', url: 'https://index.docker.io/v1/') {
+                    sh '''docker build -t tranvix0910/nodejs-blog .'''
+                    sh '''docker push tranvix0910/nodejs-blog .'''
+                }
+            }
+        }
+        // Add more stages as needed for your pipeline
     }
-
     post {
         always {
             // Clean up workspace
