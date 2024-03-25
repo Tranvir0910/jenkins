@@ -13,9 +13,8 @@ pipeline {
             steps {
                 // Clone the repository from GitHub
                 withDockerRegistry(credentialsId: 'jenkins-blog', url: 'https://index.docker.io/v1/') {
-                    sh '''sudo apt install maven'''
-                    sh '''docker build -t nodejs-blog .'''
-                    sh '''docker push tranvix0910/nodejs-blog'''
+                    sh 'docker build -t nodejs-blog .'
+                    sh 'docker push tranvix0910/nodejs-blog'
                 }
             }
         }
