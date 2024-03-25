@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/Tranvir0910/jenkins.git'
+                script {
+                    git clone 'https://github.com/Tranvir0910/jenkins.git'
+                }
             }
         }
     }
