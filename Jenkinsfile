@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the repository from GitHub
-                git 'https://github.com/Tranvir0910/jenkins.git'
+                git branch: 'main', url: 'https://github.com/Tranvir0910/jenkins.git'
             }
         }
         // Add more stages as needed for your pipeline
