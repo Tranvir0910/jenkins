@@ -12,7 +12,7 @@ pipeline {
         stage('Build Stage') {
             steps {
                 // Clone the repository from GitHub
-                withDockerRegistry(credentialsId: 'jenkins-blog',toolName: 'Docker', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: 'jenkins-blog', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
                     sh 'docker build -t nodejs-blog .'
                     sh 'docker push tranvix0910/nodejs-blog'
                 }
