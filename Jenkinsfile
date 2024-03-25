@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        state('Clone') {
+        stage('Clone') {
             step {
                 git 'https://github.com/Tranvir0910/jenkins.git'
             }
